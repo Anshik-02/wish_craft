@@ -7,6 +7,7 @@ import BirthdayQualities from "./qualities";
 import WishJar from "./wishjar";
 import BirthdaySong from "./bdaySong";
 import MemoryFlipBook from "./flipBook";
+import Link from "next/link";
 
 const BdayWebsite = ({ name, dob, message }) => {
   const displayConf = () => {
@@ -134,8 +135,7 @@ const BdayWebsite = ({ name, dob, message }) => {
         <WishJar />
       </div>
       <p className="text-lg md:text-xl text-[#7A5A4A] text-center mb-20">
-        Create one for someone who means the world to you <br></br>
-        <a>https://wish-craft-fx18.vercel.app/</a>
+       <Link href="https://wish-craft-fx18.vercel.app/" className="underline  font-semibold"> Create one for someone who means the world to you </Link>
       </p>
     </div>
   );
