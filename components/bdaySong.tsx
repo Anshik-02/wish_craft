@@ -1,6 +1,6 @@
 "use client";
 
-export default function BirthdaySong() {
+export default function BirthdaySong({ music }: { music?: string | null }) {
   return (
     <section className="w-full px-1 md:mt-24 mt-10 mb-20 flex justify-center">
       <div className="max-w-3xl w-full bg-[#FFF8EE] rounded-3xl 
@@ -15,7 +15,8 @@ export default function BirthdaySong() {
         <div className="rounded-2xl overflow-hidden shadow-md">
           <iframe
             style={{ borderRadius: "10px" }}
-            src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?utm_source=generator"
+            src={music ||""}
+
             width="100%"
             height="352"
             frameBorder="0"

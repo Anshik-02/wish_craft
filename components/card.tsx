@@ -43,7 +43,7 @@ export default function EnvelopeCard({ name }: { name: string }) {
               <feDropShadow
                 dx="0"
                 dy="8"
-                stdDeviation="10"
+                stdDeviation="10" name={name}
                 floodOpacity="0.25"
               />
             </filter>
@@ -154,7 +154,7 @@ export default function EnvelopeCard({ name }: { name: string }) {
               fontSize="34"
               fill="#333"
               fontWeight="800"
-              fontFamily="serif"
+
             >
               {name}
             </text>

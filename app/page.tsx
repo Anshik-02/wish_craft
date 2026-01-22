@@ -1,9 +1,11 @@
-import { BdayForm } from "@/components/bdayForm";
-import Image from "next/image";
+import { BdayForm } from '@/components/bdayForm';
+import Image from 'next/image';
+import React from 'react';
 
-export default function Home() {
-  return (
-    <div
+const Page = () => {
+    return (
+        <div>
+                <div
       className="relative min-h-screen w-full overflow-hidden 
       bg-gradient-to-br from-pink-50 via-orange-50 to-yellow-50 
       flex justify-center items-center px-4"
@@ -85,5 +87,8 @@ export default function Home() {
         className="hidden md:block absolute bottom-0 left-24"
       />
     </div>
-  );
+        </div>
+    );
 }
+
+export default Page;

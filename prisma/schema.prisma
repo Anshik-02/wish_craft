@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Card {
+  id              Int      @id @default(autoincrement())
+  birthdayGuyName String
+  birthDate       String
+  mainHeading     String
+  message         String?
+  songLink        String?
+  futureMessage   String?
+  senderName      String?
+  qualities       String[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}

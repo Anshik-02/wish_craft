@@ -2,16 +2,23 @@
 
 import { motion } from "framer-motion";
 
-const qualities = [
-  { label: "Curious Mind", color: "bg-[#FFE4E6]" },
-  { label: "Soft-hearted", color: "bg-[#FFF1C1]" },
-  { label: "Dream Chaser", color: "bg-[#E0F2FE]" },
-  { label: "Never Gives Up", color: "bg-[#E8F5E9]" },
-  { label: "Quietly Strong", color: "bg-[#F3E8FF]" },
-  { label: "Loyal Soul", color: "bg-[#FFF7ED]" },
+/* 🎨 color palette for cards */
+const COLORS = [
+  "bg-[#FFE4E6]",
+  "bg-[#FFF1C1]",
+  "bg-[#E0F2FE]",
+  "bg-[#E8F5E9]",
+  "bg-[#F3E8FF]",
+  "bg-[#FFF7ED]",
 ];
 
-export default function BirthdayQualities() {
+interface BirthdayQualitiesProps {
+  qualities: string[];
+}
+
+export default function BirthdayQualities({
+  qualities,
+}: BirthdayQualitiesProps) {
   return (
     <section className="px-6 py-12">
       {/* Heading */}
@@ -27,9 +34,11 @@ export default function BirthdayQualities() {
       </motion.h2>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 
-                      max-w-3xl mx-auto">
-        {qualities.map((q, i) => (
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 gap-6 
+                   max-w-3xl mx-auto"
+      >
+        {qualities.map((label, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 15 }}
@@ -37,7 +46,7 @@ export default function BirthdayQualities() {
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
             className={`
-              ${q.color}
+              ${COLORS[i % COLORS.length]}
               px-8 py-6 rounded-3xl
               flex items-center gap-4
               text-lg md:text-xl
@@ -48,11 +57,9 @@ export default function BirthdayQualities() {
             `}
           >
             {/* subtle dot */}
-            <span className="w-2 h-2 rounded-full bg-[#C25B5B] opacity-60"></span>
+            <span className="w-2 h-2 rounded-full bg-[#C25B5B] opacity-60" />
 
-            <span className="font-medium">
-              {q.label}
-            </span>
+            <span className="font-medium">{label}</span>
           </motion.div>
         ))}
       </div>

@@ -4,9 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 body{
 font-family: "Patrick Hand", cursive;
-
-
 }
+
+#section{
+  font-family: "caveat"
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

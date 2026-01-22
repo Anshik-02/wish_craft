@@ -9,7 +9,25 @@ import BirthdaySong from "./bdaySong";
 import MemoryFlipBook from "./flipBook";
 import Link from "next/link";
 
-const BdayWebsite = ({ name, dob, message }) => {
+interface BdayWebsiteProps {
+  name: string;
+  dob: string;
+  message?: string | null;
+  futureMessage?: string | null;
+  qualities?: string[];
+  musicLink?: string | null;
+  preview?: boolean;
+}
+
+const BdayWebsite = ({
+  name,
+  dob,
+  message,
+  futureMessage,
+  qualities = [],
+  musicLink,
+  preview = false,
+}: BdayWebsiteProps) => {
   const displayConf = () => {
     confetti({
       particleCount: 600,
@@ -88,7 +106,7 @@ const BdayWebsite = ({ name, dob, message }) => {
         </div>
 
         <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          <BirthdayQualities />
+          <BirthdayQualities qualities={qualities} />
 
           <div className="bg-[#FFF8EE] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.08)] p-8 sm:p-10">
             <h2 className="text-3xl sm:text-4xl text-center text-[#C25B5B] font-bold mb-6">
@@ -98,10 +116,7 @@ const BdayWebsite = ({ name, dob, message }) => {
             <div className="w-20 h-1 bg-[#E7B08E] rounded-full mx-auto mb-8"></div>
 
             <p className="text-base sm:text-2xl leading-relaxed text-[#5A4A42] whitespace-pre-line">
-              Dear Future You, If you’re reading this, remember how far you’ve
-              come. You survived days you thought you wouldn’t, and you grew in
-              ways you didn’t notice at the time. Be kind to yourself — you’re
-              doing better than you think. 🤍
+              {futureMessage}
             </p>
 
             <p className="mt-8 text-right text-[#C25B5B] font-semibold">
@@ -130,12 +145,18 @@ const BdayWebsite = ({ name, dob, message }) => {
 "
         >
           <MemoryFlipBook />
-          <BirthdaySong />
+          <BirthdaySong music={musicLink} />
         </div>
         <WishJar />
       </div>
       <p className="text-lg md:text-xl text-[#7A5A4A] text-center mb-20">
-       <Link href="https://wish-craft-fx18.vercel.app/" className="underline  font-semibold"> Create one for someone who means the world to you </Link>
+        <Link
+          href="https://wish-craft-fx18.vercel.app/"
+          className="underline font-semibold"
+        >
+          {" "}
+          Create one for someone who means the world to you{" "}
+        </Link>
       </p>
     </div>
   );
