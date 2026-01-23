@@ -1,7 +1,7 @@
-import { PrismaClient } from "./src/generated/prisma/client";
+import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
-import { createId } from "@paralleldrive/cuid2"; // or just use a simple generator if cuid isn't available
+// or just use a simple generator if cuid isn't available
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
