@@ -52,17 +52,17 @@ Be kind to yourself — you’re doing better than you think. 🤍`,
           qualities?.length
             ? qualities
             : [
-                "Kind at heart",
-                "Quietly strong",
-                "Always thoughtful",
-                "Never gives up",
-                "A beautiful soul",
-              ],
+              "Kind at heart",
+              "Quietly strong",
+              "Always thoughtful",
+              "Never gives up",
+              "A beautiful soul",
+            ],
       },
     });
 
     return NextResponse.json(
-      { id: card.id },
+      { id: card.slug },
       { status: 201 }
     );
   } catch (error) {

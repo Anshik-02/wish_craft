@@ -519,16 +519,17 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const CardScalarFieldEnum = {
   id: 'id',
-  birthdayGuyName: 'birthdayGuyName',
+  slug: 'slug',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   birthDate: 'birthDate',
+  birthdayGuyName: 'birthdayGuyName',
+  futureMessage: 'futureMessage',
   mainHeading: 'mainHeading',
   message: 'message',
-  songLink: 'songLink',
-  futureMessage: 'futureMessage',
-  senderName: 'senderName',
   qualities: 'qualities',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  senderName: 'senderName',
+  songLink: 'songLink'
 } as const
 
 export type CardScalarFieldEnum = (typeof CardScalarFieldEnum)[keyof typeof CardScalarFieldEnum]

@@ -21,7 +21,7 @@ export async function GET(
 
   try {
     const card = await prisma.card.findUnique({
-      where: { id: parseInt(id) },
+      where: { slug: id },
     });
 
     if (!card) {

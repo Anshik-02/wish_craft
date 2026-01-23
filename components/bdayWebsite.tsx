@@ -151,7 +151,7 @@ const BdayWebsite = ({
       </div>
       <p className="text-lg md:text-xl text-[#7A5A4A] text-center mb-20">
         <Link
-          href="https://wish-craft-fx18.vercel.app/"
+          href="https://wish-craft-19.vercel.app/"
           className="underline font-semibold"
         >
           {" "}

@@ -36,42 +36,45 @@ export type CardSumAggregateOutputType = {
 
 export type CardMinAggregateOutputType = {
   id: number | null
-  birthdayGuyName: string | null
-  birthDate: string | null
-  mainHeading: string | null
-  message: string | null
-  songLink: string | null
-  futureMessage: string | null
-  senderName: string | null
+  slug: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  birthDate: string | null
+  birthdayGuyName: string | null
+  futureMessage: string | null
+  mainHeading: string | null
+  message: string | null
+  senderName: string | null
+  songLink: string | null
 }
 
 export type CardMaxAggregateOutputType = {
   id: number | null
-  birthdayGuyName: string | null
-  birthDate: string | null
-  mainHeading: string | null
-  message: string | null
-  songLink: string | null
-  futureMessage: string | null
-  senderName: string | null
+  slug: string | null
   createdAt: Date | null
   updatedAt: Date | null
+  birthDate: string | null
+  birthdayGuyName: string | null
+  futureMessage: string | null
+  mainHeading: string | null
+  message: string | null
+  senderName: string | null
+  songLink: string | null
 }
 
 export type CardCountAggregateOutputType = {
   id: number
-  birthdayGuyName: number
-  birthDate: number
-  mainHeading: number
-  message: number
-  songLink: number
-  futureMessage: number
-  senderName: number
-  qualities: number
+  slug: number
   createdAt: number
   updatedAt: number
+  birthDate: number
+  birthdayGuyName: number
+  futureMessage: number
+  mainHeading: number
+  message: number
+  qualities: number
+  senderName: number
+  songLink: number
   _all: number
 }
 
@@ -86,42 +89,45 @@ export type CardSumAggregateInputType = {
 
 export type CardMinAggregateInputType = {
   id?: true
-  birthdayGuyName?: true
-  birthDate?: true
-  mainHeading?: true
-  message?: true
-  songLink?: true
-  futureMessage?: true
-  senderName?: true
+  slug?: true
   createdAt?: true
   updatedAt?: true
+  birthDate?: true
+  birthdayGuyName?: true
+  futureMessage?: true
+  mainHeading?: true
+  message?: true
+  senderName?: true
+  songLink?: true
 }
 
 export type CardMaxAggregateInputType = {
   id?: true
-  birthdayGuyName?: true
-  birthDate?: true
-  mainHeading?: true
-  message?: true
-  songLink?: true
-  futureMessage?: true
-  senderName?: true
+  slug?: true
   createdAt?: true
   updatedAt?: true
+  birthDate?: true
+  birthdayGuyName?: true
+  futureMessage?: true
+  mainHeading?: true
+  message?: true
+  senderName?: true
+  songLink?: true
 }
 
 export type CardCountAggregateInputType = {
   id?: true
-  birthdayGuyName?: true
-  birthDate?: true
-  mainHeading?: true
-  message?: true
-  songLink?: true
-  futureMessage?: true
-  senderName?: true
-  qualities?: true
+  slug?: true
   createdAt?: true
   updatedAt?: true
+  birthDate?: true
+  birthdayGuyName?: true
+  futureMessage?: true
+  mainHeading?: true
+  message?: true
+  qualities?: true
+  senderName?: true
+  songLink?: true
   _all?: true
 }
 
@@ -213,16 +219,17 @@ export type CardGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type CardGroupByOutputType = {
   id: number
-  birthdayGuyName: string
-  birthDate: string
-  mainHeading: string
-  message: string | null
-  songLink: string | null
-  futureMessage: string | null
-  senderName: string | null
-  qualities: string[]
+  slug: string | null
   createdAt: Date
   updatedAt: Date
+  birthDate: string
+  birthdayGuyName: string
+  futureMessage: string | null
+  mainHeading: string
+  message: string | null
+  qualities: string[]
+  senderName: string | null
+  songLink: string | null
   _count: CardCountAggregateOutputType | null
   _avg: CardAvgAggregateOutputType | null
   _sum: CardSumAggregateOutputType | null
@@ -250,61 +257,65 @@ export type CardWhereInput = {
   OR?: Prisma.CardWhereInput[]
   NOT?: Prisma.CardWhereInput | Prisma.CardWhereInput[]
   id?: Prisma.IntFilter<"Card"> | number
-  birthdayGuyName?: Prisma.StringFilter<"Card"> | string
-  birthDate?: Prisma.StringFilter<"Card"> | string
-  mainHeading?: Prisma.StringFilter<"Card"> | string
-  message?: Prisma.StringNullableFilter<"Card"> | string | null
-  songLink?: Prisma.StringNullableFilter<"Card"> | string | null
-  futureMessage?: Prisma.StringNullableFilter<"Card"> | string | null
-  senderName?: Prisma.StringNullableFilter<"Card"> | string | null
-  qualities?: Prisma.StringNullableListFilter<"Card">
+  slug?: Prisma.StringNullableFilter<"Card"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Card"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Card"> | Date | string
+  birthDate?: Prisma.StringFilter<"Card"> | string
+  birthdayGuyName?: Prisma.StringFilter<"Card"> | string
+  futureMessage?: Prisma.StringNullableFilter<"Card"> | string | null
+  mainHeading?: Prisma.StringFilter<"Card"> | string
+  message?: Prisma.StringNullableFilter<"Card"> | string | null
+  qualities?: Prisma.StringNullableListFilter<"Card">
+  senderName?: Prisma.StringNullableFilter<"Card"> | string | null
+  songLink?: Prisma.StringNullableFilter<"Card"> | string | null
 }
 
 export type CardOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  birthdayGuyName?: Prisma.SortOrder
-  birthDate?: Prisma.SortOrder
-  mainHeading?: Prisma.SortOrder
-  message?: Prisma.SortOrderInput | Prisma.SortOrder
-  songLink?: Prisma.SortOrderInput | Prisma.SortOrder
-  futureMessage?: Prisma.SortOrderInput | Prisma.SortOrder
-  senderName?: Prisma.SortOrderInput | Prisma.SortOrder
-  qualities?: Prisma.SortOrder
+  slug?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  birthDate?: Prisma.SortOrder
+  birthdayGuyName?: Prisma.SortOrder
+  futureMessage?: Prisma.SortOrderInput | Prisma.SortOrder
+  mainHeading?: Prisma.SortOrder
+  message?: Prisma.SortOrderInput | Prisma.SortOrder
+  qualities?: Prisma.SortOrder
+  senderName?: Prisma.SortOrderInput | Prisma.SortOrder
+  songLink?: Prisma.SortOrderInput | Prisma.SortOrder
 }
 
 export type CardWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  slug?: string
   AND?: Prisma.CardWhereInput | Prisma.CardWhereInput[]
   OR?: Prisma.CardWhereInput[]
   NOT?: Prisma.CardWhereInput | Prisma.CardWhereInput[]
-  birthdayGuyName?: Prisma.StringFilter<"Card"> | string
-  birthDate?: Prisma.StringFilter<"Card"> | string
-  mainHeading?: Prisma.StringFilter<"Card"> | string
-  message?: Prisma.StringNullableFilter<"Card"> | string | null
-  songLink?: Prisma.StringNullableFilter<"Card"> | string | null
-  futureMessage?: Prisma.StringNullableFilter<"Card"> | string | null
-  senderName?: Prisma.StringNullableFilter<"Card"> | string | null
-  qualities?: Prisma.StringNullableListFilter<"Card">
   createdAt?: Prisma.DateTimeFilter<"Card"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Card"> | Date | string
-}, "id">
+  birthDate?: Prisma.StringFilter<"Card"> | string
+  birthdayGuyName?: Prisma.StringFilter<"Card"> | string
+  futureMessage?: Prisma.StringNullableFilter<"Card"> | string | null
+  mainHeading?: Prisma.StringFilter<"Card"> | string
+  message?: Prisma.StringNullableFilter<"Card"> | string | null
+  qualities?: Prisma.StringNullableListFilter<"Card">
+  senderName?: Prisma.StringNullableFilter<"Card"> | string | null
+  songLink?: Prisma.StringNullableFilter<"Card"> | string | null
+}, "id" | "slug">
 
 export type CardOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  birthdayGuyName?: Prisma.SortOrder
-  birthDate?: Prisma.SortOrder
-  mainHeading?: Prisma.SortOrder
-  message?: Prisma.SortOrderInput | Prisma.SortOrder
-  songLink?: Prisma.SortOrderInput | Prisma.SortOrder
-  futureMessage?: Prisma.SortOrderInput | Prisma.SortOrder
-  senderName?: Prisma.SortOrderInput | Prisma.SortOrder
-  qualities?: Prisma.SortOrder
+  slug?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  birthDate?: Prisma.SortOrder
+  birthdayGuyName?: Prisma.SortOrder
+  futureMessage?: Prisma.SortOrderInput | Prisma.SortOrder
+  mainHeading?: Prisma.SortOrder
+  message?: Prisma.SortOrderInput | Prisma.SortOrder
+  qualities?: Prisma.SortOrder
+  senderName?: Prisma.SortOrderInput | Prisma.SortOrder
+  songLink?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CardCountOrderByAggregateInput
   _avg?: Prisma.CardAvgOrderByAggregateInput
   _max?: Prisma.CardMaxOrderByAggregateInput
@@ -317,111 +328,119 @@ export type CardScalarWhereWithAggregatesInput = {
   OR?: Prisma.CardScalarWhereWithAggregatesInput[]
   NOT?: Prisma.CardScalarWhereWithAggregatesInput | Prisma.CardScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Card"> | number
-  birthdayGuyName?: Prisma.StringWithAggregatesFilter<"Card"> | string
-  birthDate?: Prisma.StringWithAggregatesFilter<"Card"> | string
-  mainHeading?: Prisma.StringWithAggregatesFilter<"Card"> | string
-  message?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
-  songLink?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
-  futureMessage?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
-  senderName?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
-  qualities?: Prisma.StringNullableListFilter<"Card">
+  slug?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Card"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Card"> | Date | string
+  birthDate?: Prisma.StringWithAggregatesFilter<"Card"> | string
+  birthdayGuyName?: Prisma.StringWithAggregatesFilter<"Card"> | string
+  futureMessage?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
+  mainHeading?: Prisma.StringWithAggregatesFilter<"Card"> | string
+  message?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
+  qualities?: Prisma.StringNullableListFilter<"Card">
+  senderName?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
+  songLink?: Prisma.StringNullableWithAggregatesFilter<"Card"> | string | null
 }
 
 export type CardCreateInput = {
-  birthdayGuyName: string
-  birthDate: string
-  mainHeading: string
-  message?: string | null
-  songLink?: string | null
-  futureMessage?: string | null
-  senderName?: string | null
-  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  slug?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  birthDate: string
+  birthdayGuyName: string
+  futureMessage?: string | null
+  mainHeading: string
+  message?: string | null
+  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  senderName?: string | null
+  songLink?: string | null
 }
 
 export type CardUncheckedCreateInput = {
   id?: number
-  birthdayGuyName: string
-  birthDate: string
-  mainHeading: string
-  message?: string | null
-  songLink?: string | null
-  futureMessage?: string | null
-  senderName?: string | null
-  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  slug?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  birthDate: string
+  birthdayGuyName: string
+  futureMessage?: string | null
+  mainHeading: string
+  message?: string | null
+  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  senderName?: string | null
+  songLink?: string | null
 }
 
 export type CardUpdateInput = {
-  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
-  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
-  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
+  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
+  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CardUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
-  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
-  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
+  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
+  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CardCreateManyInput = {
   id?: number
-  birthdayGuyName: string
-  birthDate: string
-  mainHeading: string
-  message?: string | null
-  songLink?: string | null
-  futureMessage?: string | null
-  senderName?: string | null
-  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  slug?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  birthDate: string
+  birthdayGuyName: string
+  futureMessage?: string | null
+  mainHeading: string
+  message?: string | null
+  qualities?: Prisma.CardCreatequalitiesInput | string[]
+  senderName?: string | null
+  songLink?: string | null
 }
 
 export type CardUpdateManyMutationInput = {
-  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
-  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
-  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
+  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
+  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type CardUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
-  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
-  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
-  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  slug?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  birthDate?: Prisma.StringFieldUpdateOperationsInput | string
+  birthdayGuyName?: Prisma.StringFieldUpdateOperationsInput | string
+  futureMessage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mainHeading?: Prisma.StringFieldUpdateOperationsInput | string
+  message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qualities?: Prisma.CardUpdatequalitiesInput | string[]
+  senderName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  songLink?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -434,16 +453,17 @@ export type StringNullableListFilter<$PrismaModel = never> = {
 
 export type CardCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  birthdayGuyName?: Prisma.SortOrder
-  birthDate?: Prisma.SortOrder
-  mainHeading?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  songLink?: Prisma.SortOrder
-  futureMessage?: Prisma.SortOrder
-  senderName?: Prisma.SortOrder
-  qualities?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  birthDate?: Prisma.SortOrder
+  birthdayGuyName?: Prisma.SortOrder
+  futureMessage?: Prisma.SortOrder
+  mainHeading?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  qualities?: Prisma.SortOrder
+  senderName?: Prisma.SortOrder
+  songLink?: Prisma.SortOrder
 }
 
 export type CardAvgOrderByAggregateInput = {
@@ -452,28 +472,30 @@ export type CardAvgOrderByAggregateInput = {
 
 export type CardMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  birthdayGuyName?: Prisma.SortOrder
-  birthDate?: Prisma.SortOrder
-  mainHeading?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  songLink?: Prisma.SortOrder
-  futureMessage?: Prisma.SortOrder
-  senderName?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  birthDate?: Prisma.SortOrder
+  birthdayGuyName?: Prisma.SortOrder
+  futureMessage?: Prisma.SortOrder
+  mainHeading?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  senderName?: Prisma.SortOrder
+  songLink?: Prisma.SortOrder
 }
 
 export type CardMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  birthdayGuyName?: Prisma.SortOrder
-  birthDate?: Prisma.SortOrder
-  mainHeading?: Prisma.SortOrder
-  message?: Prisma.SortOrder
-  songLink?: Prisma.SortOrder
-  futureMessage?: Prisma.SortOrder
-  senderName?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  birthDate?: Prisma.SortOrder
+  birthdayGuyName?: Prisma.SortOrder
+  futureMessage?: Prisma.SortOrder
+  mainHeading?: Prisma.SortOrder
+  message?: Prisma.SortOrder
+  senderName?: Prisma.SortOrder
+  songLink?: Prisma.SortOrder
 }
 
 export type CardSumOrderByAggregateInput = {
@@ -484,21 +506,21 @@ export type CardCreatequalitiesInput = {
   set: string[]
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
+}
+
+export type StringFieldUpdateOperationsInput = {
+  set?: string
 }
 
 export type CardUpdatequalitiesInput = {
   set?: string[]
   push?: string | string[]
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -513,77 +535,82 @@ export type IntFieldUpdateOperationsInput = {
 
 export type CardSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  birthdayGuyName?: boolean
-  birthDate?: boolean
-  mainHeading?: boolean
-  message?: boolean
-  songLink?: boolean
-  futureMessage?: boolean
-  senderName?: boolean
-  qualities?: boolean
+  slug?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  birthDate?: boolean
+  birthdayGuyName?: boolean
+  futureMessage?: boolean
+  mainHeading?: boolean
+  message?: boolean
+  qualities?: boolean
+  senderName?: boolean
+  songLink?: boolean
 }, ExtArgs["result"]["card"]>
 
 export type CardSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  birthdayGuyName?: boolean
-  birthDate?: boolean
-  mainHeading?: boolean
-  message?: boolean
-  songLink?: boolean
-  futureMessage?: boolean
-  senderName?: boolean
-  qualities?: boolean
+  slug?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  birthDate?: boolean
+  birthdayGuyName?: boolean
+  futureMessage?: boolean
+  mainHeading?: boolean
+  message?: boolean
+  qualities?: boolean
+  senderName?: boolean
+  songLink?: boolean
 }, ExtArgs["result"]["card"]>
 
 export type CardSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  birthdayGuyName?: boolean
-  birthDate?: boolean
-  mainHeading?: boolean
-  message?: boolean
-  songLink?: boolean
-  futureMessage?: boolean
-  senderName?: boolean
-  qualities?: boolean
+  slug?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  birthDate?: boolean
+  birthdayGuyName?: boolean
+  futureMessage?: boolean
+  mainHeading?: boolean
+  message?: boolean
+  qualities?: boolean
+  senderName?: boolean
+  songLink?: boolean
 }, ExtArgs["result"]["card"]>
 
 export type CardSelectScalar = {
   id?: boolean
-  birthdayGuyName?: boolean
-  birthDate?: boolean
-  mainHeading?: boolean
-  message?: boolean
-  songLink?: boolean
-  futureMessage?: boolean
-  senderName?: boolean
-  qualities?: boolean
+  slug?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  birthDate?: boolean
+  birthdayGuyName?: boolean
+  futureMessage?: boolean
+  mainHeading?: boolean
+  message?: boolean
+  qualities?: boolean
+  senderName?: boolean
+  songLink?: boolean
 }
 
-export type CardOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "birthdayGuyName" | "birthDate" | "mainHeading" | "message" | "songLink" | "futureMessage" | "senderName" | "qualities" | "createdAt" | "updatedAt", ExtArgs["result"]["card"]>
+export type CardOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "createdAt" | "updatedAt" | "birthDate" | "birthdayGuyName" | "futureMessage" | "mainHeading" | "message" | "qualities" | "senderName" | "songLink", ExtArgs["result"]["card"]>
 
 export type $CardPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Card"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    birthdayGuyName: string
-    birthDate: string
-    mainHeading: string
-    message: string | null
-    songLink: string | null
-    futureMessage: string | null
-    senderName: string | null
-    qualities: string[]
+    slug: string | null
     createdAt: Date
     updatedAt: Date
+    birthDate: string
+    birthdayGuyName: string
+    futureMessage: string | null
+    mainHeading: string
+    message: string | null
+    qualities: string[]
+    senderName: string | null
+    songLink: string | null
   }, ExtArgs["result"]["card"]>
   composites: {}
 }
@@ -1008,16 +1035,17 @@ export interface Prisma__CardClient<T, Null = never, ExtArgs extends runtime.Typ
  */
 export interface CardFieldRefs {
   readonly id: Prisma.FieldRef<"Card", 'Int'>
-  readonly birthdayGuyName: Prisma.FieldRef<"Card", 'String'>
-  readonly birthDate: Prisma.FieldRef<"Card", 'String'>
-  readonly mainHeading: Prisma.FieldRef<"Card", 'String'>
-  readonly message: Prisma.FieldRef<"Card", 'String'>
-  readonly songLink: Prisma.FieldRef<"Card", 'String'>
-  readonly futureMessage: Prisma.FieldRef<"Card", 'String'>
-  readonly senderName: Prisma.FieldRef<"Card", 'String'>
-  readonly qualities: Prisma.FieldRef<"Card", 'String[]'>
+  readonly slug: Prisma.FieldRef<"Card", 'String'>
   readonly createdAt: Prisma.FieldRef<"Card", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Card", 'DateTime'>
+  readonly birthDate: Prisma.FieldRef<"Card", 'String'>
+  readonly birthdayGuyName: Prisma.FieldRef<"Card", 'String'>
+  readonly futureMessage: Prisma.FieldRef<"Card", 'String'>
+  readonly mainHeading: Prisma.FieldRef<"Card", 'String'>
+  readonly message: Prisma.FieldRef<"Card", 'String'>
+  readonly qualities: Prisma.FieldRef<"Card", 'String[]'>
+  readonly senderName: Prisma.FieldRef<"Card", 'String'>
+  readonly songLink: Prisma.FieldRef<"Card", 'String'>
 }
     
 
