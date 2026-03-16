@@ -2,12 +2,12 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-body{
-font-family: "Patrick Hand", cursive;
+body {
+  font-family: var(--font-patrick-hand), cursive;
 }
 
-#section{
-  font-family: "caveat"
+#section {
+  font-family: var(--font-caveat), cursive;
 }
 
 @theme inline {
